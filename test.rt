@@ -1,0 +1,73 @@
+viewport
+    origin 0 0 10000
+    topleft 0 0 0
+    bottomleft 800 0 0
+    topright 0 800 0
+endviewport
+materials
+        entry
+                name redOne
+                color 75 0 0
+                reflect 0
+                refract 0
+        endentry
+        entry
+                name blueOne
+                color 0 0 75
+                reflect 0
+                refract 0
+        endentry
+        entry
+            name whiteOne
+            color 75 75 75
+            reflect 0
+            refract 0
+        endentry
+endmaterials
+lights
+        reference
+                power 1
+                distance 1
+        endreference
+        point
+                coords 1 2 3
+                power 300000
+        endpoint
+        point
+            coords 1000 1000 0
+            power 300000
+        endpoint
+endlights
+geometry
+        sphere
+                coords 300 300 -50
+                radius 80
+                material redOne
+        endsphere
+        sphere
+                coords 700 700 -150
+                radius 40
+                material blueOne
+        endsphere
+        triangle
+
+                vertex 0 0 -200
+                vertex 0 500 -200
+                vertex 600 0 -200
+                material blueOne
+        endtriangle
+        #quadrangle
+        #        vertex 500 500 -199
+        #        vertex 600 500 -199
+        #        vertex 600 600 -199
+        #        vertex 500 600 -199
+        #        material redOne
+        #endquadrangle
+        quadrangle
+                vertex 300 300 -199
+                vertex 1000 300 -199
+                vertex 1000 1000 -199
+                vertex 300 1000 -199
+                material whiteOne
+        endquadrangle
+endgeometry
